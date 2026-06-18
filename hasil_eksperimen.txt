@@ -1,0 +1,94 @@
+=== Contoh kecil (verifikasi manual) ===
+N(A) = ['C', 'D', 'E'], k(A) = 3
+N(B) = ['C', 'D', 'F'], k(B) = 3
+N(A) ∩ N(B) = ['C', 'D'] -> |irisan| = 2
+N(A) ∪ N(B) = ['C', 'D', 'E', 'F'] -> |gabungan| = 4
+derajat teman bersama: k(C)=3, k(D)=2
+   CN        = 2.0000
+   Jaccard   = 0.5000
+   Salton    = 0.6667
+   Sorensen  = 0.6667
+   HPI       = 0.6667
+   HDI       = 0.6667
+   LHN       = 0.2222
+   RA        = 0.8333
+   AA        = 2.3529
+   PA        = 9.0000
+
+=== Statistik graf (SNAP ego-Facebook) ===
+Simpul : 4039 | Sisi : 88234
+Derajat rata-rata : 43.69 | maksimum : 1045
+Ulangan Monte Carlo : 20 | rasio uji : 0.2
+
+  run  1/20 selesai (kandidat=994774, positif=17495)
+  run  2/20 selesai (kandidat=1010383, positif=17533)
+  run  3/20 selesai (kandidat=1010670, positif=17526)
+  run  4/20 selesai (kandidat=1004143, positif=17531)
+  run  5/20 selesai (kandidat=1029197, positif=17521)
+  run  6/20 selesai (kandidat=1016098, positif=17535)
+  run  7/20 selesai (kandidat=1020552, positif=17529)
+  run  8/20 selesai (kandidat=1004038, positif=17518)
+  run  9/20 selesai (kandidat=1002996, positif=17530)
+  run 10/20 selesai (kandidat=1019704, positif=17533)
+  run 11/20 selesai (kandidat=1013099, positif=17510)
+  run 12/20 selesai (kandidat=986198, positif=17524)
+  run 13/20 selesai (kandidat=991900, positif=17509)
+  run 14/20 selesai (kandidat=1005633, positif=17529)
+  run 15/20 selesai (kandidat=986707, positif=17520)
+  run 16/20 selesai (kandidat=998730, positif=17507)
+  run 17/20 selesai (kandidat=1019661, positif=17551)
+  run 18/20 selesai (kandidat=1006682, positif=17528)
+  run 19/20 selesai (kandidat=1007747, positif=17528)
+  run 20/20 selesai (kandidat=1000877, positif=17515)
+
+=== Ringkasan AUC (rerata ± simpangan baku, 20 run) ===
+  RA        AUC = 0.9718 ± 0.0007 (95% CI ±0.0003)
+  AA        AUC = 0.9619 ± 0.0008 (95% CI ±0.0003)
+  CN        AUC = 0.9520 ± 0.0010 (95% CI ±0.0004)
+  Salton    AUC = 0.9450 ± 0.0012 (95% CI ±0.0005)
+  Jaccard   AUC = 0.9360 ± 0.0012 (95% CI ±0.0005)
+  Sorensen  AUC = 0.9360 ± 0.0012 (95% CI ±0.0005)
+  HDI       AUC = 0.9293 ± 0.0013 (95% CI ±0.0006)
+  HPI       AUC = 0.9070 ± 0.0028 (95% CI ±0.0012)
+  PA        AUC = 0.7835 ± 0.0021 (95% CI ±0.0009)
+  LHN       AUC = 0.6976 ± 0.0035 (95% CI ±0.0015)
+
+Metrik terbaik (rerata AUC): RA
+  RA > AA pada 20/20 run
+  RA > CN pada 20/20 run
+  RA > Salton pada 20/20 run
+  RA > Jaccard pada 20/20 run
+  RA > Sorensen pada 20/20 run
+  RA > HDI pada 20/20 run
+  RA > HPI pada 20/20 run
+  RA > PA pada 20/20 run
+  RA > LHN pada 20/20 run
+
+=== Rerata Precision@k ===
+  metrik     P@10    P@50    P@100   P@500   P@1000  
+  RA         1.000   0.994   0.977   0.959   0.950   
+  AA         1.000   0.990   0.981   0.957   0.919   
+  CN         0.995   0.990   0.980   0.953   0.915   
+  Salton     0.035   0.023   0.019   0.120   0.473   
+  Jaccard    0.035   0.023   0.019   0.123   0.477   
+  Sorensen   0.035   0.023   0.019   0.123   0.477   
+  HDI        0.035   0.023   0.019   0.145   0.506   
+  HPI        0.015   0.008   0.005   0.007   0.008   
+  PA         0.255   0.315   0.347   0.283   0.289   
+  LHN        0.000   0.004   0.003   0.005   0.004   
+
+Info kandidat: total=994774, positif=17495
+
+=== Analisis sensitivitas terhadap rasio uji ===
+  rasio 0.10: CN=0.959, Jaccard=0.946, Salton=0.956, Sorensen=0.946, HPI=0.923, HDI=0.939, LHN=0.727, RA=0.976, AA=0.967, PA=0.787
+  rasio 0.20: CN=0.952, Jaccard=0.936, Salton=0.946, Sorensen=0.936, HPI=0.908, HDI=0.930, LHN=0.700, RA=0.972, AA=0.962, PA=0.782
+  rasio 0.30: CN=0.942, Jaccard=0.921, Salton=0.928, Sorensen=0.921, HPI=0.883, HDI=0.914, LHN=0.665, RA=0.966, AA=0.955, PA=0.776
+
+=== Top-5 rekomendasi (metrik RA) untuk pengguna 0 ===
+   pengguna 322   | skor RA = 2.6459 | teman bersama = 47
+   pengguna 277   | skor RA = 2.4197 | teman bersama = 40
+   pengguna 252   | skor RA = 1.7836 | teman bersama = 38
+   pengguna 285   | skor RA = 1.7488 | teman bersama = 28
+   pengguna 312   | skor RA = 1.6240 | teman bersama = 15
+
+results.json tersimpan.

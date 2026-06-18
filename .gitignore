@@ -1,0 +1,13 @@
+# Skrip penyusun dokumen — tidak terkait riset, mengandung data pribadi
+build_docx.py
+
+# Berkas makalah final (mengandung nama, NIM, email)
+*.docx
+*.pdf
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Keluaran teks duplikat lama
+data/hasil_eksperimen.txt
