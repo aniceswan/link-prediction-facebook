@@ -33,6 +33,14 @@ def urutkan(ringkas):
     return sorted(ringkas, key=lambda m: ringkas[m]["auc_mean"], reverse=True)
 
 
+# Nama tampilan agar ejaan pada figur konsisten dengan teks makalah.
+LABEL = {"Sorensen": "Sørensen"}
+
+
+def label(m):
+    return LABEL.get(m, m)
+
+
 # --------------------------------------------------------------------------
 # Gambar 1: contoh graf kecil (untuk bagian metode)
 # --------------------------------------------------------------------------
@@ -104,7 +112,8 @@ def gambar_auc(ringkas):
                   error_kw={"elinewidth": 0.9, "ecolor": "#333333"})
     ax.axhline(0.5, color="#d62728", ls="--", lw=1.0, label="tebakan acak (0,5)")
     ax.set_xticks(list(x))
-    ax.set_xticklabels(nama, rotation=45, ha="right", fontsize=9)
+    ax.set_xticklabels([label(m) for m in nama], rotation=45, ha="right",
+                       fontsize=9)
     ax.set_ylim(0.45, 1.0)
     ax.set_ylabel("AUC (rata-rata 20 ulangan)")
     ax.set_title("AUC tiap metrik kemiripan pada data uji ego-Facebook")
@@ -128,7 +137,7 @@ def gambar_precision(ringkas):
     for i, m in enumerate(nama):
         ys = [ringkas[m]["precision"][str(k)] for k in KS]
         ax.plot(KS, ys, marker="o", markersize=4, linewidth=1.5,
-                color=cmap(i % 10), label=m)
+                color=cmap(i % 10), label=label(m))
     ax.set_xscale("log")
     ax.set_xlabel("k (jumlah rekomendasi teratas)")
     ax.set_ylabel("Precision@k")
