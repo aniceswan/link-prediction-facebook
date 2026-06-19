@@ -35,6 +35,7 @@ makalah.
 ## Cara menjalankan
 
 Hanya membutuhkan Python 3 (pustaka standar) dan `matplotlib` untuk figur.
+Jalankan dari direktori akar repositori agar path `data/` terbaca.
 
 ```bash
 pip install matplotlib
