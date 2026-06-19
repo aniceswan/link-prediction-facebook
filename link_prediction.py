@@ -273,7 +273,7 @@ def eksperimen(n_runs=N_RUNS, rasio=TEST_RATIO, verbose=True):
     return ringkas, info
 
 
-def sensitivitas(rasios=(0.10, 0.20, 0.30), n_runs=5):
+def sensitivitas(rasios=(0.10, 0.20, 0.30), n_runs=20):
     """Rerata AUC tiap metrik pada beberapa rasio uji."""
     print("\n=== Analisis sensitivitas terhadap rasio uji ===")
     tabel = {}
